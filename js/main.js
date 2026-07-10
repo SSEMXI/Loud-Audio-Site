@@ -1,7 +1,7 @@
 // ===================== CONFIG =====================
 // Point this at your Railway backend once deployed.
 // e.g. "https://loud-audio-backend.up.railway.app"
-const API_BASE = window.LOUD_API_BASE || "https://your-backend.up.railway.app";
+const API_BASE = window.LOUD_API_BASE || "https://loud-audio-mastering-backend-production.up.railway.app";
 
 // ===================== NAV =====================
 (function(){
