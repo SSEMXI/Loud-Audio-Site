@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book a Session — Loud Audio Mastering Studio</title>
+<meta name="description" content="Book your mixing, mastering, or vocal production session with Loud Audio Mastering Studio. Tell us about your project, pay securely online, and upload your files.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://loudrecording.com/book.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://loudrecording.com/book.html">
+<meta property="og:title" content="Book a Session — Loud Audio Mastering Studio">
+<meta property="og:description" content="Book your mixing, mastering, or vocal production session. Pay securely online and upload your files.">
+<meta property="og:image" content="https://loudrecording.com/img/og-image.jpg">
+<meta property="og:site_name" content="Loud Audio Mastering Studio">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html" class="brand"><span class="mark">L</span><span class="full-text">Loud Audio Mastering Studio</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="book.html" class="active nav-cta-mobile btn btn-primary">Book Now</a></li>
+  </ul>
+  <a href="book.html" class="nav-cta">Book a Session</a>
+  <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" id="navToggle">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+</nav>
+
+<header class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">Book a Session</span>
+    <h1>Tell us about<br><i style="font-style:italic;color:var(--burgundy-bright);">your project.</i></h1>
+    <p>Fill out your project details below, then choose a service to pay and start. You'll be able to upload your files right after checkout.</p>
+  </div>
+</header>
+
+<section class="section-pad">
+  <div class="wrap" style="max-width:760px;">
+
+    <div class="card" style="margin-bottom:40px;">
+      <span class="eyebrow">Step 1</span>
+      <h3 style="margin-bottom:1.2em;">Project Details</h3>
+      <form id="bookingForm">
+        <div class="field-row">
+          <div class="field">
+            <label for="bName">Name</label>
+            <input type="text" id="bName" required placeholder="Your name">
+          </div>
+          <div class="field">
+            <label for="bEmail">Email</label>
+            <input type="email" id="bEmail" required placeholder="you@email.com">
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="bService">Service needed</label>
+            <select id="bService">
+              <option value="mixing">Mixing — $150</option>
+              <option value="mastering" selected>Mastering — $80</option>
+              <option value="vocal">Vocal Production — $120</option>
+              <option value="unsure">Not sure yet</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="bGenre">Genre</label>
+            <input type="text" id="bGenre" placeholder="e.g. R&B, Hip-Hop, Pop">
+          </div>
+        </div>
+        <div class="field">
+          <label for="bNotes">Tell us about the track</label>
+          <textarea id="bNotes" placeholder="Reference tracks, what's not working yet, deadlines — anything that helps us understand the vision."></textarea>
+        </div>
+
+        <div class="field">
+          <label>Upload your files (optional now — you can also upload after payment)</label>
+          <div class="upload-drop" id="dropZone" tabindex="0" role="button" aria-label="Upload files">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 16V4M12 4l-4 4M12 4l4 4"/><path d="M4 16v3a2 2 0 002 2h12a2 2 0 002-2v-3"/></svg>
+            <div>Drop your stems / rough mix here, or click to browse</div>
+            <div class="field-hint">WAV / AIFF / MP3 / ZIP — up to 2GB</div>
+          </div>
+          <input type="file" id="fileInput" multiple class="vh">
+          <div class="upload-list" id="fileList"></div>
+        </div>
+
+        <button type="submit" class="btn btn-outline btn-block">Save Project Details</button>
+        <p id="bookingStatus" class="field-hint" role="status"></p>
+      </form>
+    </div>
+
+    <div class="card">
+      <span class="eyebrow">Step 2</span>
+      <h3 style="margin-bottom:.6em;">Choose a service & pay</h3>
+      <p style="margin-bottom:1.6em;">Your project details are attached automatically. After payment you'll land on a confirmation page to finish uploading any remaining files.</p>
+      <div class="grid-3">
+        <button class="btn btn-primary" data-checkout data-service-id="mixing" data-service-name="Mixing" data-price-cents="15000">Mixing — $150</button>
+        <button class="btn btn-primary" data-checkout data-service-id="mastering" data-service-name="Mastering" data-price-cents="8000">Mastering — $80</button>
+        <button class="btn btn-primary" data-checkout data-service-id="vocal" data-service-name="Vocal Production" data-price-cents="12000">Vocal — $120</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-bottom" style="border-top:none; padding-top:0;">
+      <span>© 2026 Loud Audio Mastering Studio. All rights reserved.</span>
+      <a href="index.html">Back to home</a>
+    </div>
+  </div>
+</footer>
+
+<button class="chat-launcher" id="chatLauncher" aria-label="Open chat assistant">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12c0 4.4-4 8-9 8a9.7 9.7 0 01-4-.8L3 20l1-4.2A8.3 8.3 0 013 12c0-4.4 4-8 9-8s9 3.6 9 8z"/></svg>
+  <span class="badge"></span>
+</button>
+<div class="chat-window" id="chatWindow">
+  <div class="chat-head">
+    <div class="who"><span class="dot"></span><div><h6>Intake Assistant</h6><small>Usually replies instantly</small></div></div>
+    <button id="chatClose" aria-label="Close chat">✕</button>
+  </div>
+  <div class="chat-body" id="chatBody"></div>
+  <form class="chat-input" id="chatForm">
+    <input id="chatInput" type="text" placeholder="Type a message…" autocomplete="off">
+    <button type="submit" aria-label="Send">➤</button>
+  </form>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+  const uploadWidget = initUploadWidget('dropZone', 'fileInput', 'fileList');
+
+  document.getElementById('bookingForm').addEventListener('submit', async function(e){
+    e.preventDefault();
+    const status = document.getElementById('bookingStatus');
+    status.textContent = 'Saving…';
+    const payload = {
+      name: document.getElementById('bName').value,
+      email: document.getElementById('bEmail').value,
+      service: document.getElementById('bService').value,
+      genre: document.getElementById('bGenre').value,
+      notes: document.getElementById('bNotes').value,
+      fileCount: uploadWidget.getFiles().length
+    };
+    try{
+      const res = await fetch(`${API_BASE}/api/booking`, {
+        method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload)
+      });
+      if(!res.ok) throw new Error();
+      status.textContent = 'Saved — now choose a service below to pay and start.';
+    }catch(err){
+      status.textContent = 'This will save once the backend is connected (see README). Your details are still shown below — go ahead and pay when ready.';
+    }
+  });
+
+  // Pre-fill checkout email from the form if available
+  document.querySelectorAll('[data-checkout]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const email = document.getElementById('bEmail').value;
+      if(email) btn.dataset.customerEmail = email;
+    });
+  });
+</script>
+<script src="js/seo.js"></script>
+</body>
+</html>

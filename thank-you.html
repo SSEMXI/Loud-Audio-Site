@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You're Booked — Loud Audio Mastering Studio</title>
+<meta name="description" content="Payment confirmed. Upload your project files to get started.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html" class="brand"><span class="mark">L</span><span class="full-text">Loud Audio Mastering Studio</span></a>
+  <span class="nav-cta" style="border-color:var(--line); cursor:default;">Order Confirmed</span>
+</nav>
+
+<header class="page-hero" style="padding-bottom:0;">
+  <div class="wrap">
+    <span class="eyebrow">Payment Confirmed</span>
+    <h1>You're booked.<br><i style="font-style:italic;color:var(--burgundy-bright);">Let's get your files.</i></h1>
+    <p>A confirmation email is on its way to your inbox. Upload your project files below to kick things off — your engineer will start as soon as files are received.</p>
+  </div>
+</header>
+
+<section class="section-pad" style="padding-top:50px;">
+  <div class="wrap" style="max-width:680px;">
+
+    <div class="card" style="margin-bottom:28px;">
+      <span class="eyebrow">Order Summary</span>
+      <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;">
+        <h3 id="orderService" style="margin:0;">Mastering</h3>
+        <span class="price" id="orderPrice" style="margin:0;">$80</span>
+      </div>
+      <p class="muted" id="orderRef" style="margin:0;">Reference: pending</p>
+    </div>
+
+    <div class="card">
+      <span class="eyebrow">Upload Your Files</span>
+      <div class="upload-drop" id="dropZone" tabindex="0" role="button" aria-label="Upload files">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 16V4M12 4l-4 4M12 4l4 4"/><path d="M4 16v3a2 2 0 002 2h12a2 2 0 002-2v-3"/></svg>
+        <div>Drop your stems / rough mix here, or click to browse</div>
+        <div class="field-hint">WAV / AIFF / MP3 / ZIP — up to 2GB</div>
+      </div>
+      <input type="file" id="fileInput" multiple class="vh">
+      <div class="upload-list" id="fileList"></div>
+
+      <div class="field" style="margin-top:22px;">
+        <label for="upNotes">Anything the engineer should know?</label>
+        <textarea id="upNotes" placeholder="Reference tracks, focal points, deadline, etc."></textarea>
+      </div>
+
+      <button class="btn btn-primary btn-block" id="uploadBtn">Upload & Submit</button>
+      <p id="uploadStatus" class="field-hint" role="status"></p>
+    </div>
+
+    <div class="form-note">
+      <span>ⓘ</span>
+      <span>Files are uploaded securely and linked to your order automatically. You'll get a follow-up email once your engineer starts work.</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-bottom" style="border-top:none; padding-top:0;">
+      <span>© 2026 Loud Audio Mastering Studio. All rights reserved.</span>
+      <a href="index.html">Back to home</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  const uploadWidget = initUploadWidget('dropZone', 'fileInput', 'fileList');
+
+  // Read Stripe session info from the redirect URL, e.g. thank-you.html?session_id=cs_test_...
+  const params = new URLSearchParams(window.location.search);
+  const sessionId = params.get('session_id');
+  if(sessionId){
+    document.getElementById('orderRef').textContent = 'Reference: ' + sessionId.slice(-12);
+  }
+
+  document.getElementById('uploadBtn').addEventListener('click', async () => {
+    const status = document.getElementById('uploadStatus');
+    const files = uploadWidget.getFiles();
+    if(files.length === 0){ status.textContent = 'Add at least one file before submitting.'; return; }
+    status.textContent = 'Uploading…';
+
+    try{
+      const form = new FormData();
+      files.forEach(f => form.append('files', f));
+      form.append('sessionId', sessionId || '');
+      form.append('notes', document.getElementById('upNotes').value);
+
+      const res = await fetch(`${API_BASE}/api/upload`, { method:'POST', body: form });
+      if(!res.ok) throw new Error();
+      status.textContent = "Uploaded — you're all set. We'll be in touch.";
+    }catch(err){
+      status.textContent = 'Upload will go live once the backend + storage are connected (see README). For now, email your files to hello@loudaudiomastering.com.';
+    }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Primary SEO -->
+<title>Loud Audio Mastering Studio — Mixing, Mastering & Vocal Production</title>
+<meta name="description" content="Loud Audio Mastering Studio offers professional mixing, mastering, and vocal production. Book online, pay securely, and get release-ready masters in 24–48 hours.">
+<meta name="keywords" content="audio mastering, music mixing, vocal production, online mastering studio, song mastering, mixing engineer">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://loudrecording.com/">
+
+<!-- Open Graph (Facebook, Instagram, WhatsApp previews) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://loudrecording.com/">
+<meta property="og:title" content="Loud Audio Mastering Studio — Mixing, Mastering & Vocal Production">
+<meta property="og:description" content="Professional mixing, mastering, and vocal production. Book online, pay securely, and get release-ready masters in 24–48 hours.">
+<meta property="og:image" content="https://loudrecording.com/img/og-image.jpg">
+<meta property="og:site_name" content="Loud Audio Mastering Studio">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Loud Audio Mastering Studio — Mixing, Mastering & Vocal Production">
+<meta name="twitter:description" content="Professional mixing, mastering, and vocal production. Book online, pay securely, and get release-ready masters in 24–48 hours.">
+<meta name="twitter:image" content="https://loudrecording.com/img/og-image.jpg">
+
+<!-- JSON-LD Structured Data (helps Google understand the business) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MusicStore",
+  "name": "Loud Audio Mastering Studio",
+  "url": "https://loudrecording.com",
+  "email": "hello@loudrecording.com",
+  "description": "Professional mixing, mastering, and vocal production for artists and producers.",
+  "priceRange": "$80 – $150",
+  "openingHours": ["Mo-Fr 10:00-20:00", "Sa 12:00-18:00"],
+  "sameAs": [
+    "https://instagram.com/loudaudiomastering",
+    "https://tiktok.com/@loudaudiomastering",
+    "https://youtube.com/@loudaudiomastering"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Studio Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": { "@type": "Service", "name": "Mixing" },
+        "price": "150",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": { "@type": "Service", "name": "Mastering" },
+        "price": "80",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": { "@type": "Service", "name": "Vocal Production" },
+        "price": "120",
+        "priceCurrency": "USD"
+      }
+    ]
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html" class="brand"><span class="mark">L</span><span class="full-text">Loud Audio Mastering Studio</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="book.html" class="nav-cta-mobile btn btn-primary">Book Now</a></li>
+  </ul>
+  <a href="book.html" class="nav-cta">Book a Session</a>
+  <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" id="navToggle">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="hero-kicker">Mixing · Mastering · Vocal Production</span>
+      <h1>Make it <i>loud</i>.<br>Make it land.</h1>
+      <p class="hero-sub">Loud Audio Mastering Studio takes your rough mix to a release-ready master that holds up on club systems, earbuds, and everything in between.</p>
+      <div class="hero-actions">
+        <a href="book.html" class="btn btn-primary btn-lg">Start Your Project</a>
+        <a href="services.html" class="btn btn-outline btn-lg">See Pricing</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>500+</b><span>Tracks Mastered</span></div>
+        <div><b>24–48h</b><span>Turnaround</span></div>
+        <div><b>3</b><span>Free Revisions</span></div>
+      </div>
+    </div>
+
+    <div class="meter-panel" aria-hidden="true">
+      <div class="meter-panel-head">
+        <span>Output Monitor</span>
+        <span class="live"><span class="live-dot"></span>Live</span>
+      </div>
+      <div class="vu-row" id="vuRow"></div>
+      <div class="vu-scale">
+        <span>-40</span><span>-20</span><span>-10</span><span>-6</span><span>-3</span><span>0 dB</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="tick-divider" aria-hidden="true">
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<!-- ===================== ABOUT TEASER ===================== -->
+<section class="section-pad">
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow">The Studio</span>
+      <h2>Engineered by ear,<br>finished by ear.</h2>
+      <p>Loud Audio Mastering Studio was built for artists and producers who are done guessing whether their mix translates. Every project gets monitored on three reference systems and checked against commercial loudness targets before it ever leaves the room.</p>
+      <p>No algorithms doing the listening for you — just a trained ear, a treated room, and gear that's been chosen for what it does to a vocal, not what it looks like on a shelf.</p>
+      <a href="about.html" class="btn btn-ghost">More about the studio →</a>
+    </div>
+    <div class="visual-frame">
+      <div class="ring"><b>LA</b></div>
+    </div>
+  </div>
+</section>
+
+<div class="tick-divider" aria-hidden="true">
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<!-- ===================== SERVICES TEASER ===================== -->
+<section class="section-pad" style="background:var(--bg-raised);">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Services</span>
+      <h2>Pick your stage.</h2>
+      <p>Every package includes revisions and direct file delivery once your payment clears — no extra back and forth.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card svc-card">
+        <div class="lvl"><span class="on"></span><span></span><span></span><span></span><span></span></div>
+        <h3>Mixing</h3>
+        <p class="price">$150<sup>/ song</sup></p>
+        <p>Balance, depth, and width for a track that's ready to master.</p>
+        <a href="services.html" class="btn btn-outline btn-block">View Details</a>
+      </div>
+      <div class="card svc-card featured">
+        <div class="lvl"><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span></div>
+        <h3>Mastering</h3>
+        <p class="price">$80<sup>/ song</sup></p>
+        <p>Loudness, polish, and translation across every playback system.</p>
+        <a href="services.html" class="btn btn-primary btn-block">View Details</a>
+      </div>
+      <div class="card svc-card">
+        <div class="lvl"><span class="on"></span><span class="on"></span><span></span><span></span><span></span></div>
+        <h3>Vocal Production</h3>
+        <p class="price">$120<sup>/ song</sup></p>
+        <p>Tuning, comping, and processing to bring your vocal forward.</p>
+        <a href="services.html" class="btn btn-outline btn-block">View Details</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HOW IT WORKS (legit sequence) ===================== -->
+<section class="section-pad">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Process</span>
+      <h2>From rough mix to release in four steps.</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="num">01</span><h4>Tell us about your track</h4><p>Use the chat assistant or booking form to share what you need and your timeline.</p></div>
+      <div class="step"><span class="num">02</span><h4>Choose a service & pay</h4><p>Pick mixing, mastering, or vocal production and check out securely with Stripe.</p></div>
+      <div class="step"><span class="num">03</span><h4>Upload your files</h4><p>Drop your stems or rough mix straight into your confirmation page.</p></div>
+      <div class="step"><span class="num">04</span><h4>Get your masters</h4><p>Receive your finished files by email within 24–48 hours.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TESTIMONIALS ===================== -->
+<section class="section-pad" style="background:var(--bg-raised);">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow">Client Words</span>
+      <h2>What clients are saying.</h2>
+    </div>
+    <!-- Replace this block with real testi-card items as reviews come in. -->
+    <div class="testi-empty">
+      Testimonials are on their way — check back soon, or be the first to leave one after your session.
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="section-pad">
+  <div class="wrap" style="max-width:760px;">
+    <div class="section-head center">
+      <span class="eyebrow">FAQ</span>
+      <h2>Good to know.</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">What file formats do you accept? <span class="plus">+</span></button>
+        <div class="faq-a"><p>WAV or AIFF at 24-bit is preferred. We also accept full stem sessions for mixing projects — just zip them before uploading.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How long does a project take? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Most mastering projects are returned in 24–48 hours. Mixing and vocal production typically take 3–5 business days depending on the project.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How many revisions do I get? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Every package includes free revision rounds — the exact number is listed on each service. Additional rounds beyond that are billed at a flat rate.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Do I need to pay before sending files? <span class="plus">+</span></button>
+        <div class="faq-a"><p>Yes — checkout happens first, then you're taken straight to a secure upload page so your project starts immediately after payment.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA ===================== -->
+<section class="cta-band">
+  <div class="wrap">
+    <span class="eyebrow" style="justify-content:center;">Ready When You Are</span>
+    <h2>Let's get your track sounding loud.</h2>
+    <p>Tell us what you need — book online and we'll take it from there.</p>
+    <a href="book.html" class="btn btn-primary btn-lg">Book Your Session</a>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand"><span class="mark">L</span><span class="full-text">Loud Audio Mastering Studio</span></a>
+        <p>Professional mixing, mastering, and vocal production for artists and producers who want their music to translate everywhere.</p>
+        <div class="social-row">
+          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="https://tiktok.com" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c.4 2 1.8 3.6 3.9 4v3c-1.5 0-2.9-.4-4.1-1.2v6.4a5.7 5.7 0 11-5.7-5.7c.3 0 .6 0 .9.1v3.1a2.6 2.6 0 102 2.5V3h3z"/></svg></a>
+          <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="18" height="12" rx="3"/><path d="M11 10l4 2-4 2z" fill="currentColor"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h5>Site</h5>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services & Pricing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="book.html">Book a Session</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Services</h5>
+        <ul>
+          <li><a href="services.html#mixing">Mixing</a></li>
+          <li><a href="services.html#mastering">Mastering</a></li>
+          <li><a href="services.html#vocal">Vocal Production</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:hello@loudaudiomastering.com">hello@loudaudiomastering.com</a></li>
+          <li><a href="tel:+10000000000">(000) 000-0000</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Loud Audio Mastering Studio. All rights reserved.</span>
+      <span>Site by you, built with care.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== CHAT WIDGET ===================== -->
+<button class="chat-launcher" id="chatLauncher" aria-label="Open chat assistant">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12c0 4.4-4 8-9 8a9.7 9.7 0 01-4-.8L3 20l1-4.2A8.3 8.3 0 013 12c0-4.4 4-8 9-8s9 3.6 9 8z"/></svg>
+  <span class="badge"></span>
+</button>
+<div class="chat-window" id="chatWindow">
+  <div class="chat-head">
+    <div class="who"><span class="dot"></span><div><h6>Intake Assistant</h6><small>Usually replies instantly</small></div></div>
+    <button id="chatClose" aria-label="Close chat">✕</button>
+  </div>
+  <div class="chat-body" id="chatBody"></div>
+  <form class="chat-input" id="chatForm">
+    <input id="chatInput" type="text" placeholder="Type a message…" autocomplete="off">
+    <button type="submit" aria-label="Send">➤</button>
+  </form>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/seo.js"></script>
+</body>
+</html>
