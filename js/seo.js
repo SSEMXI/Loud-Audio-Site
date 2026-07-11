@@ -3,7 +3,7 @@
 // Get it from: analytics.google.com → Admin → Data Streams → your stream
 (function(){
   const GA_ID = window.LOUD_GA_ID || 'G-LK9HCYS3C9';
-  if(GA_ID === 'G-LK9HCYS3C9') return; // don't load until real ID is set
+  if(GA_ID === 'G-XXXXXXXXXX') return;
 
   const script = document.createElement('script');
   script.async = true;
