@@ -2,7 +2,7 @@
 // Replace G-XXXXXXXXXX with your real GA4 Measurement ID
 // Get it from: analytics.google.com → Admin → Data Streams → your stream
 (function(){
-  const GA_ID = window.LOUD_GA_ID || 'G-XXXXXXXXXX';
+  const GA_ID = window.LOUD_GA_ID || 'G-LK9HCYS3C9';
   if(GA_ID === 'G-LK9HCYS3C9') return; // don't load until real ID is set
 
   const script = document.createElement('script');
